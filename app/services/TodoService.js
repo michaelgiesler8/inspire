@@ -12,3 +12,13 @@ class TodoService {
         }
     }
 
+    async addTodo(description) {
+        try {
+            const res = await api.post('/api/todos', { description });
+            const newTodo = new Todo(res.data);
+            AppState.todos = [...AppState.todos, newTodo];
+        } catch (error) {
+            console.error('Error adding todo:', error);
+        }
+    }
+
