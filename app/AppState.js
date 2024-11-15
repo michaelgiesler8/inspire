@@ -4,3 +4,4 @@ import { createObservableProxy } from './app/utils/ObservableProxy.js';
 class AppState extends EventEmitter {
   user = null;
   account = null;
+  quote = null;
