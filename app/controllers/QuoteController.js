@@ -15,3 +15,9 @@ export class QuoteController {
             console.error('Error getting quote:', error);
         }
     }
+
+    drawQuote() {
+        const quote = AppState.quote;
+        setHTML('quote', quote.Template);
+    }
+}
