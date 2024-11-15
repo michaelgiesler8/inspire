@@ -1,20 +1,17 @@
-import { AuthController } from './controllers/AuthController.js';
-import { router } from './router-config.js';
-const USE_ROUTER = false
+import { AuthController } from './app/controllers/AuthController.js';
+import { QuoteController } from './app/controllers/QuoteController.js';
+import { ImageController } from './app/controllers/ImageController.js';
+import { WeatherController } from './app/controllers/WeatherController.js';
+import { ClockController } from './app/controllers/ClockController.js';
+import { TodoController } from './app/controllers/TodoController.js'
 
 class App {
-
-  AuthController = new AuthController()
-  
-  constructor() {
-    if(USE_ROUTER){
-      this.router = router
-      this.router.init(this)
-    }
-  }
+  authController = new AuthController();
+  quoteController = new QuoteController();
+  imageController = new ImageController();
+  weatherController = new WeatherController();
+  clockController = new ClockController();
+  todoController = new TodoController();
 }
 
-
-const app = new App()
-// @ts-ignore
-window.app = app
+window.app = new App();
