@@ -1,11 +1,4 @@
-import { EventEmitter } from './utils/EventEmitter.js'
-import { createObservableProxy } from './utils/ObservableProxy.js'
+import { EventEmitter } from './app/utils/EventEmitter.js';
+import { createObservableProxy } from './app/utils/ObservableProxy.js';
 
-class ObservableAppState extends EventEmitter {
-
-  user = null
-  /**@type {import('./models/Account.js').Account | null} */
-  account = null
-}
-
-export const AppState = createObservableProxy(new ObservableAppState())
+class AppState extends EventEmitter {
