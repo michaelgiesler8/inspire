@@ -15,3 +15,9 @@ export const AuthService = Auth0Provider.initialize({
     );
   },
 });
+
+AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, async () => {
+  api.defaults.headers.authorization = AuthService.bearer;
+  AppState.user = AuthService.user;
+  await accountService.getAccount();
+});
