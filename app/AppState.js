@@ -5,3 +5,4 @@ class AppState extends EventEmitter {
   user = null;
   account = null;
   quote = null;
+  image = null;
