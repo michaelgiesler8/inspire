@@ -5,3 +5,8 @@ export class ClockController {
         this.startClock();
     }
 
+    startClock() {
+        this.drawClock();
+        setInterval(() => this.drawClock(), 1000);
+    }
+
