@@ -7,3 +7,12 @@ export class WeatherController {
         AppState.on('weather', this.drawWeather.bind(this));
         this.getWeather();
     }
+
+    async getWeather() {
+        try {
+            await weatherService.getWeather();
+        } catch (error) {
+            console.error('Error getting weather:', error);
+        }
+    }
+
