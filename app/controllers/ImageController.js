@@ -7,4 +7,11 @@ export class ImageController {
         this.getImage();
     }
 
-}
+    async getImage() {
+        try {
+            await imageService.getImage();
+        } catch (error) {
+            console.error('Error getting image:', error);
+        }
+    }
+
