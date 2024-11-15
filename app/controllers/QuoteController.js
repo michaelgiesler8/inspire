@@ -7,3 +7,11 @@ export class QuoteController {
         AppState.on('quote', this.drawQuote.bind(this));
         this.getQuote();
     }
+
+    async getQuote() {
+        try {
+            await quoteService.getQuote();
+        } catch (error) {
+            console.error('Error getting quote:', error);
+        }
+    }
