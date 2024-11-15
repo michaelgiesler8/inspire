@@ -49,6 +49,17 @@ export class TodoController {
         }
     }
 
+    async deleteTodo(id) {
+        const confirmed = await Pop.confirm('Are you sure you want to delete this todo?');
+        if (confirmed) {
+            try {
+                await todoService.deleteTodo(id);
+            } catch (error) {
+                console.error('Error deleting todo:', error);
+            }
+        }
+    }
+}
 
 
 
