@@ -35,4 +35,14 @@ class TodoService {
         }
     }
 
+    async deleteTodo(id) {
+        try {
+            await api.delete(`/api/todos/${id}`);
+            AppState.todos = AppState.todos.filter((t) => t.id !== id);
+        } catch (error) {
+            console.error('Error deleting todo:', error);
+        }
+    }
+}
 
+export const todoService = new TodoService();
