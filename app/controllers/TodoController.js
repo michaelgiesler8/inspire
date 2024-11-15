@@ -25,6 +25,22 @@ export class TodoController {
         setHTML('todo-count', `<p>${incompleteCount} tasks remaining</p>`);
     }
 
+    async addTodo() {
+        event.preventDefault();
+        const form = event.target;
+        const description = form.description.value.trim();
+        if (!description) {
+            Pop.toast('Please enter a todo description', 'warning');
+            return;
+        }
+        form.reset();
+        try {
+            await todoService.addTodo(description);
+        } catch (error) {
+            console.error('Error adding todo:', error);
+        }
+    }
+
 
 
 
