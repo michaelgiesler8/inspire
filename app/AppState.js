@@ -9,3 +9,5 @@ class AppState extends EventEmitter {
   weather = null;
   todos = [];
 }
+
+export const AppState = createObservableProxy(new AppState());
