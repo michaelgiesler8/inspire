@@ -1,4 +1,5 @@
 import { baseURL } from '../env.js';
 
 export const api = axios.create({
-  aseURL: baseURL,
+  baseURL: baseURL,
+  timeout: 8000,
