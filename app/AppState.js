@@ -7,3 +7,5 @@ class AppState extends EventEmitter {
   quote = null;
   image = null;
   weather = null;
+  todos = [];
+}
