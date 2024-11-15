@@ -9,4 +9,11 @@ export class TodoController {
         this.getTodos();
     }
 
+    async getTodos() {
+        try {
+            await todoService.getTodos();
+        } catch (error) {
+            console.error('Error getting todos:', error);
+        }
+    }
 
