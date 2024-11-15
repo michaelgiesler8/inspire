@@ -15,3 +15,13 @@ export class ImageController {
         }
     }
 
+    drawImage() {
+        const image = AppState.image;
+        const backgroundOverlay = document.getElementById('background-overlay');
+        backgroundOverlay.style.backgroundImage = `url(${image.url})`;
+        backgroundOverlay.style.backgroundSize = 'cover';
+        backgroundOverlay.style.backgroundRepeat = 'no-repeat';
+        backgroundOverlay.style.backgroundPosition = 'center';
+        backgroundOverlay.style.opacity = '0.5';
+    }
+}
