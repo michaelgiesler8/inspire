@@ -1,8 +1,8 @@
 import { Auth0Provider } from '@bcwdev/auth0provider';
 import { api } from './AxiosService.js';
-import { AppState } from '../../AppState.js';
+import { AppState } from '../AppState.js';
 import { accountService } from './AccountService.js';
-import { domain, clientId, audience } from '../../env.js';
+import { domain, clientId, audience } from '../env.js';
 
 export const AuthService = Auth0Provider.initialize({
   domain,
