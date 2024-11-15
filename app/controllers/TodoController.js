@@ -41,6 +41,14 @@ export class TodoController {
         }
     }
 
+    async toggleTodoStatus(id) {
+        try {
+            await todoService.toggleTodoStatus(id);
+        } catch (error) {
+            console.error('Error toggling todo status:', error);
+        }
+    }
+
 
 
 
