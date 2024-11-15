@@ -17,3 +17,14 @@ export class TodoController {
         }
     }
 
+    drawTodos() {
+        const todos = AppState.todos;
+        const incompleteCount = todos.filter((t) => !t.completed).length;
+        let template = todos.map((t) => t.Template).join('');
+        setHTML('todos', template);
+        setHTML('todo-count', `<p>${incompleteCount} tasks remaining</p>`);
+    }
+
+
+
+
