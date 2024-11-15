@@ -16,3 +16,8 @@ export class WeatherController {
         }
     }
 
+    drawWeather() {
+        const weather = AppState.weather;
+        setHTML('weather', weather.Template);
+    }
+
