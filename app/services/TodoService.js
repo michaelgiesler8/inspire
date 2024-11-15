@@ -22,3 +22,17 @@ class TodoService {
         }
     }
 
+    async toggleTodoStatus(id) {
+        try {
+            const todo = AppState.todos.find((t) => t.id === id);
+            if (todo) {
+                todo.completed = !todo.completed;
+                await api.put(`/api/todos/${id}`, { completed: todo.completed });
+                AppState.emit('todos', AppState.todos);
+            }
+        } catch (error) {
+            console.error('Error toggling todo status:', error);
+        }
+    }
+
+
