@@ -21,3 +21,10 @@ export class WeatherController {
         setHTML('weather', weather.Template);
     }
 
+    toggleUnit() {
+        const weather = AppState.weather;
+        weather.unit = weather.unit === 'F' ? 'C' : 'F';
+        this.drawWeather();
+    }
+}
+
